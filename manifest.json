@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "wordmark",
+    "version": "0.1",
+
+    "description": "For a better vocabulary",
+
+    "browser_action": {
+        "default_title": "Wordmark",
+        "default_popup": "browser-action.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "run_at": "document_end",
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "storage"
+    ],
+
+    "web_accessible_resources": [
+        "templates/*"
+    ]
+
+}
