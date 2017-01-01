@@ -9,8 +9,11 @@ var wm = {};
 // Don't lookup these nodes
 wm.ignoreNodes = ["script", "iframe", "link", "meta", "use", "img"];
 
-// CSS class name
-wm.styleElement = "wordmark";
+// Load background color
+wm.color = "#ffff80";
+chrome.storage.local.get("s__color", function(r) {
+  if (r.hasOwnProperty("s__color")) wm.color = r.s__color;
+});
 
 // Add a word to local storage
 wm.word = {};
@@ -48,7 +51,7 @@ wm.highlight = function(e) {
     var loop = function(index, maxCount) {
       wm.word.exists(words[index], function(isExists) {
         if (isExists) {
-          words[index] = "<span class='" + wm.styleElement + "'>" + words[index] + "</span>";
+          words[index] = "<span style='background-color:" + wm.color + "'>" + words[index] + "</span>";
         }
         
         if (++index < maxCount) {
@@ -67,4 +70,6 @@ wm.highlight = function(e) {
 }
 
 // This script is scheduled to run after document is loaded.
-wm.highlight(document.body);
+chrome.storage.local.get("s__auto", function(r) {
+  if (r.s__auto) wm.highlight(document.body);
+});

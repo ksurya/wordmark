@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/favicon.ico">
+
+    <title>Settings - Wordmark Chrome Extension</title>
+
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/jumbotron-narrow.css" rel="stylesheet">
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="../settings/index.html">Settings</a></li>
+            <li role="presentation"><a href="../flashcard/index.html">Flash Cards</a></li>
+            <li role="presentation"><a href="../list/index.html">Word List</a></li>
+            <li role="presentation"><a href="../home/index.html">Home</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Wordmark <b>Settings</b></h3>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <form class="form">
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input type="text" class="form-control" placeholder="Ex: #ffff80" name="color"">
+            </div>
+            <div class="form-group">
+              <label for="autorun">Auto Highlight</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="autorun" value="on"> On
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="autorun" value="off"> Off
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

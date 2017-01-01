@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "wordmark",
+    "name": "Wordmark",
     "version": "0.1",
 
     "description": "For a better vocabulary",
 
     "browser_action": {
         "default_title": "Wordmark",
-        "default_popup": "browser-action.html"
+        "default_popup": "browser_action.html"
     },
 
     "content_scripts": [
@@ -16,19 +16,25 @@
             "run_at": "document_end",
             "js": [
                 "script.js"
-            ],
-            "css": [
-                "style.css"
             ]
         }
     ],
 
+    "background": {
+        "scripts": ["background.js"]
+    },
+
     "permissions": [
-        "storage"
+        "storage",
+        "contextMenus"
     ],
 
     "web_accessible_resources": [
-        "templates/*"
+        "settings/*",
+        "flashcard/*",
+        "home/*",
+        "list/*",
+        "assets/*"
     ]
 
 }
