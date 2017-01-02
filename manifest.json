@@ -3,7 +3,14 @@
     "name": "Wordmark",
     "version": "0.1",
 
-    "description": "For better vocabulary",
+    "description": "Word lists simplified",
+    "homepage_url": "https://github.com/ksurya/wordmark",
+
+    "icons": {
+        "16": "assets/logo-thumb.png",
+        "32": "assets/logo-thumb.png",
+        "128": "assets/logo-thumb.png"
+    },
 
     "browser_action": {
         "default_title": "Wordmark",

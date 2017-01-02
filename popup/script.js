@@ -14,7 +14,7 @@ var popup = {
 };
 
 popup.query = function(word, callback) {
-  var url = "http://api.pearson.com/v2/dictionaries/lasde/entries";
+  var url = "https://api.pearson.com/v2/dictionaries/lasde/entries";
   var params = { headword: word, limit: 1, apiKey: popup.apiKey };
   $.get(url, params, function(r) {
     if (!!r.results && r.results.length > 0) {
@@ -72,9 +72,11 @@ popup.show = function(e) {
       <i>${ data.phonetics || "" } ${ data.part_of_speech || "" }</i></br>
       <p>
         ${ data.definition || "" }</br></br>
-        <a target="_blank" href="${ data.ref.google }">Google</a>,
-        <a target="_blank" href="${ data.ref.vocabulary }">Vocabulary</a>,
-        <a target="_blank" href="${ data.ref.thesaurus }">Thesaurus</a>
+        <small>
+          <a target="_blank" href="${ data.ref.google }">Google</a>,
+          <a target="_blank" href="${ data.ref.vocabulary }">Vocabulary</a>,
+          <a target="_blank" href="${ data.ref.thesaurus }">Thesaurus</a>
+        </small>
       </p>
     `;
     popup.setContent(content);
