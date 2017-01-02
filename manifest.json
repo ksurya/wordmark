@@ -17,7 +17,6 @@
             "js": [
                 "assets/jquery.min.js",
                 "assets/bootstrap.min.js",
-                "variables.js",
                 "marker/script.js",
                 "popup/script.js"
             ],
