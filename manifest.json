@@ -3,7 +3,7 @@
     "name": "Wordmark",
     "version": "0.1",
 
-    "description": "For a better vocabulary",
+    "description": "For better vocabulary",
 
     "browser_action": {
         "default_title": "Wordmark",
@@ -15,8 +15,13 @@
             "matches": ["http://*/*", "https://*/*"],
             "run_at": "document_end",
             "js": [
-                "script.js"
-            ]
+                "assets/jquery.min.js",
+                "assets/bootstrap.min.js",
+                "variables.js",
+                "marker/script.js",
+                "popup/script.js"
+            ],
+            "css": ["popup/popover.min.css"]
         }
     ],
 
@@ -30,11 +35,13 @@
     ],
 
     "web_accessible_resources": [
-        "settings/*",
-        "flashcard/*",
+        "assets/*",
         "home/*",
         "list/*",
-        "assets/*"
+        "settings/*",
+        "flashcard/*",
+        "marker/*",
+        "popup/*"
     ]
 
 }

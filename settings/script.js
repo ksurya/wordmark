@@ -2,6 +2,10 @@
 
 var settings = {
 
+  // keys..
+  colorKey: "s__color",
+  autorunKey: "s__auto",
+
   get: function(key, callback) {
     chrome.storage.local.get(key, function(r) {
       callback(r[key]);
@@ -21,29 +25,29 @@ document.onreadystatechange = function() {
     
     // highlight color
     var colorEle = document.body.querySelector("form input[name='color']");
-    settings.get("s__color", function(v) {
+    settings.get(settings.colorKey, function(v) {
       colorEle.value = v;
     })
     colorEle.onchange = function(e) {
-      settings.update("s__color", e.target.value);
+      settings.update(settings.colorKey, e.target.value);
     }
 
     // autorun on
     var autorunOnEle = document.body.querySelector("form input[name='autorun'][value='on']");
-    settings.get("s__auto", function(v) {
+    settings.get(settings.autorunKey, function(v) {
       autorunOnEle.checked = v;
     });
     autorunOnEle.onchange = function(e) {
-      settings.update("s__auto", e.target.checked);
+      settings.update(settings.autorunKey, e.target.checked);
     }
     
     // autorun off
     var autorunOffEle = document.body.querySelector("form input[name='autorun'][value='off']");
-    settings.get("s__auto", function(v) {
+    settings.get(settings.autorunKey, function(v) {
       autorunOffEle.checked = !v;
     });
     autorunOffEle.onchange = function(e) {
-      settings.update("s__auto", !e.target.checked);
+      settings.update(settings.autorunKey, !e.target.checked);
     }
   }  
 }
