@@ -80,7 +80,7 @@ popup.show = function(e) {
     popup.setContent(content);
 
     // set location
-    popup.setLocation(e.clientX + "px", e.clientY + 8 + "px");
+    popup.setLocation(e.pageX + "px", e.pageY + 8 + "px");
 
     // finally, let's show..
     $(popup.element).show();
